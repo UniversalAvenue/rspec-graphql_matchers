@@ -124,7 +124,7 @@ module RSpec::GraphqlMatchers
         end
       end
 
-      context 'there is no deprecation reason present' do
+      context 'when there is no deprecation reason present' do
         subject(:a_type) do
           GraphQL::ObjectType.define do
             name 'TestObject'
@@ -135,7 +135,7 @@ module RSpec::GraphqlMatchers
           end
         end
 
-        it 'fails' do
+        it 'fails when the reasons do not match' do
           expect do
             expect(a_type).to have_a_field(:id)
               .with_deprecation_reason('whatever')
