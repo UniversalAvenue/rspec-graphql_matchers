@@ -106,8 +106,8 @@ module RSpec::GraphqlMatchers
     end
 
     describe '.with_deprecation_reason(deprecation_reason)' do
-      context 'when a deprecation reason in present' do
-        it 'passes' do
+      context 'when a deprecation reason is present' do
+        it 'passes when the deprecation reason is correct' do
           expect(a_type).to have_a_field(:id)
             .with_deprecation_reason('Deprecated')
         end
